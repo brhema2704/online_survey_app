@@ -1,38 +1,219 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #d0e7ff; /* Light blue background for the body */
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  max-width: 800px; /* Increased max width for a bigger app */
+  margin: 0 auto; /* Center the app */
+  padding: 40px; /* Increased padding around the content */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Soft shadow around the app */
+  border-radius: 10px; /* Rounded corners */
+  background-color: #ffffff; /* White background for the app container */
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  text-align: center;
+  background-color: #4a90e2; /* Dashboard header background */
+  color: white; /* White text color */
+  padding: 20px; /* Padding for the header */
+  border-radius: 10px 10px 0 0; /* Rounded top corners */
+  margin-bottom: 20px; /* Space below the header */
+}
+
+h1 {
+  font-size: 2.5em; /* Increased font size for the main heading */
+}
+
+p {
+  font-size: 1.2em; /* Increased font size for the description */
+}
+
+label {
+  display: block; /* Make labels block elements */
+  margin-top: 20px; /* Increased space above each label */
+  font-weight: bold; /* Make labels bold */
+  color: #34495e; /* Darker gray color for labels */
+}
+
+input {
+  width: 100%; /* Full width for inputs */
+  padding: 15px; /* Increased padding inside inputs */
+  margin-top: 10px; /* Space above inputs */
+  border: 1px solid #bdc3c7; /* Light border */
+  border-radius: 6px; /* Rounded corners */
+  font-size: 1.1em; /* Larger font size for inputs */
+  transition: border-color 0.3s; /* Transition for border color */
+}
+
+input:focus {
+  border-color: #3498db; /* Change border color on focus */
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5); /* Light blue glow on focus */
+}
+
+button {
+  background-color: #27ae60; /* Green background for buttons */
   color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 6px; /* Increased border radius */
+  cursor: pointer;
+  font-size: 1.2em; /* Increased font size for buttons */
+  margin-top: 20px; /* Space above buttons */
+  transition: background-color 0.3s, transform 0.2s; /* Transition for hover effects */
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background-color: #219653; /* Darker green on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button:active {
+  transform: translateY(0); /* Reset lift effect when button is clicked */
+}
+
+.thank-you {
+  text-align: center; /* Center the thank you message */
+  color: #2c3e50; /* Darker text color */
+  margin-top: 30px; /* Space above thank you message */
+  font-size: 1.5em; /* Larger font size for thank you message */
+}
+
+.responses {
+  margin-top: 20px; /* Space above responses section */
+}
+
+.response-item {
+  border: 1px solid #eee; /* Light border for response items */
+  padding: 15px; /* Increased padding inside response items */
+  margin-top: 10px; /* Space above each response item */
+  border-radius: 6px; /* Rounded corners */
+  background-color: #ecf0f1; /* Light gray background for responses */
+}
+
+.feedback-input {
+  width: 100%; /* Full width for feedback input */
+  padding: 10px; /* Padding inside feedback input */
+  border: 1px solid #bdc3c7; /* Light border */
+  border-radius: 6px; /* Rounded corners */
+  margin-top: 10px; /* Space above feedback input */
+  font-size: 1em; /* Font size for feedback input */
+}
+.thank-you-feedback {
+  text-align: center; /* Center the thank you message */
+  color: #2c3e50; /* Darker text color */
+  margin-top: 20px; /* Space above thank you message */
+  font-size: 1.5em; /* Larger font size for thank you message */
+  background-color: #ecf0f1; /* Light gray background for feedback confirmation */
+  padding: 10px; /* Padding for the feedback confirmation */
+  border-radius: 6px; /* Rounded corners */
+}
+
+
+.modal {
+  position: fixed;
+  z-index: 1000; /* Ensure modal is on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fff; /* Modal background color */
+  border-radius: 10px;
+  padding: 30px; /* Increased padding inside modal */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  position: relative;
+  width: 500px; /* Increased width of the modal */
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5em;
+  color: #e74c3c; /* Red color for close button */
+  cursor: pointer; /* Pointer cursor for close button */
+}
+
+.responses {
+  margin-top: 30px; /* Increased space above responses section */
+}
+
+.response-item {
+  border: 1px solid #eee; /* Light border for response items */
+  padding: 15px; /* Increased padding inside response items */
+  margin-top: 15px; /* Space above each response item */
+  border-radius: 6px; /* Rounded corners */
+  background-color: #ecf0f1; /* Light gray background for responses */
+  font-size: 1.1em; /* Larger font size for responses */
+  color: #2c3e50; /* Darker text color for responses */
+}
+
+
+/* Modal styles */
+.modal {
+  position: fixed;
+  z-index: 1000; /* Ensure modal is on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white; /* Modal background color */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  position: relative;
+  width: 400px; /* Width of the modal */
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5em;
+  cursor: pointer; /* Pointer cursor for close button */
+}
+/* Button container styles */
+.button-container {
+  display: flex;
+  justify-content: space-between; /* Space buttons apart */
+  margin-top: 20px; /* Space above buttons */
+}
+
+button {
+  background-color: #007bff; /* Blue background for buttons */
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em; /* Font size for buttons */
+  transition: background-color 0.3s, transform 0.2s; /* Transition for hover effects */
+  flex: 1; /* Make buttons take equal space */
+  margin: 0 10px; /* Space between buttons */
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+button:active {
+  transform: translateY(0); /* Reset lift effect when button is clicked */
 }
